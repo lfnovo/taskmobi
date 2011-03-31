@@ -1,4 +1,10 @@
 Taskmobi::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/about"
+
+  get "pages/download"
+
   resources :streams
 
   resources :users

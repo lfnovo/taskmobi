@@ -1,0 +1,20 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+		<p><a href="/streams/new">New Stream</a></p>
+	<% unless @user.streams.empty? #this should be all streams, not only the ones owned %>
+	<table class="streams" summary="User Streams">
+		<%= render @streams %>
+	</table>
+	<%= will_paginate @streams %>
+	<% end %>	
+    </td>
+    <td class="sidebar round">
+      O que eu coloco aqui?
+    </td>
+  </tr>
+</table>

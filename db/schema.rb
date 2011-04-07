@@ -10,11 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331230016) do
+ActiveRecord::Schema.define(:version => 20110403181717) do
 
   create_table "streams", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "owner"
+    t.integer  "stream_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

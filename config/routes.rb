@@ -1,5 +1,7 @@
 Taskmobi::Application.routes.draw do
 
+  resources :tasks
+
   get "sessions/new"
 
 
@@ -18,7 +20,7 @@ Taskmobi::Application.routes.draw do
 
 #  get "pages/download"
 
-  resources :streams, :only => [:new, :create, :destroy]
+  resources :streams
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

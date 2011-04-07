@@ -217,6 +217,13 @@ table.streams tr td.stream span.timestamp {
   color: #666;
 }
 
+table.streams tr td.stream span.timestamp {
+  font-weight: bold;
+  display: block;
+  color: #666;
+}
+
+
 div.user_info img {
   padding-right: 0.1em;
 }
@@ -232,3 +239,20 @@ div.user_info span.user_name {
 div.user_info span.streams {
   font-size: 80%;
 }
+
+.streamcreated
+{
+  display: block;
+  font-size: 85%;
+  color: #666;
+	
+}
+
+.taskcreated
+{
+  display: block;
+  font-size: 85%;
+  color: #666;
+	
+}
+

@@ -10,6 +10,16 @@ class StreamsController < ApplicationController
         render 'pages/home'
       end
     end
+
+    ## TODO: proteger isso para ver se o cara pode acessar
+    def show
+      @stream = Stream.find(params[:id])
+      @user = User.find(@stream.user_id)
+      @tasks = @stream.tasks.paginate(:page => params[:page])
+      @title = @stream.title
+      @task = Task.new
+    end
+      
     
     def destroy
     end

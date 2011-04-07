@@ -1,6 +1,6 @@
 <tr>
   <td class="stream">
-    <span class="title"><%= stream.title %></span>
+    <span class="title"><%= link_to stream.title, stream %></span>
     <span class="timestamp">
       Created <%= time_ago_in_words(stream.created_at) %> ago.
     </span>

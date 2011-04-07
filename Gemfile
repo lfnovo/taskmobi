@@ -8,6 +8,7 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'best_in_place'
 
 group :development do
 	gem 'annotate-models', '1.0.4'

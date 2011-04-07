@@ -1,0 +1,35 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @title %>
+      </h1>
+
+
+	<%= form_for(@task) do |f| %>
+	    <%= render 'shared/error_messages', :object => f.object %>
+	  <div class="field">
+	    <%= f.text_field :title %>  <%= f.submit "Add Task" %>
+	<%= hidden_field_tag(:stream_id, @stream.id) %>
+	  </div>
+	<% end %>
+
+
+		<% unless @tasks.empty? %>
+		<table class="tasks" summary="Stream Tasks">
+			<%= render @tasks %>
+		</table>
+		<%= will_paginate @tasks %>
+		<% end %>
+		
+		
+		
+    </td>
+    <td class="sidebar round">
+		<p>Author: <%= link_to @user.name, @user %><br />
+		<span class="streamcreated">Created: <%= time_ago_in_words(@stream.created_at) %> ago</span>
+		</p>
+      <p>Participants</p>
+    </td>
+  </tr>
+</table>

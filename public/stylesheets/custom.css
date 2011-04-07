@@ -256,3 +256,24 @@ div.user_info span.streams {
 	
 }
 
+.editable_field input
+{
+	font-size: 100%;
+	width: 350px;
+}
+
+.editable_stream_title input
+{
+	font-size: 100%;
+	width: 350px;
+}
+
+.field input
+{
+	font-size: 100%;
+}
+
+.addtask
+{
+	font-size: 100%;
+}

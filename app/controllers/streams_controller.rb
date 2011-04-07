@@ -5,7 +5,7 @@ class StreamsController < ApplicationController
       @stream  = current_user.streams.build(params[:stream])
       if @stream.save
         flash[:success] = "Stream created succesfully!"
-        redirect_to root_path
+        redirect_to @stream
       else
         render 'pages/home'
       end
@@ -22,6 +22,19 @@ class StreamsController < ApplicationController
       
     
     def destroy
+    end
+    
+    def update
+      @stream = Stream.find(params[:id])
+
+      respond_to do |format|
+        if @stream.update_attributes(params[:stream])
+          format.json { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.json  { render :json => @stream.errors, :status => :unprocessable_entity }
+        end
+      end
     end
     
     def new

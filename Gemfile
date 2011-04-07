@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 gem 'best_in_place'
+gem 'jquery-rails'
 
 group :development do
 	gem 'annotate-models', '1.0.4'

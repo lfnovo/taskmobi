@@ -1,6 +1,17 @@
 <tr>
   <td class="task">
-    <span class="title"><input type="checkbox" name="" value="" /> <%= task.title  %></span>
+    <span class="tasktitle">
+	
+	
+	<%= check_box("task", "done", { :class => 'taskcheck' }, "true", "false") %>
+	
+	
+	<input type="checkbox" name="" value="" <%= if (task.done) then "checked" end %> /> 
+	
+<span class="editable_field">
+<%= best_in_place task, :title, :type => :input %>
+</span>
+</span>
     <span class="taskcreated">
       Created <%= time_ago_in_words(task.created_at) %> ago.
     </span>
